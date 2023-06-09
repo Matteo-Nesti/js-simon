@@ -24,23 +24,24 @@ for(let i = 0; i < 5; i++) {
     }
 }
 
-
 // funzione per nascondere i numeri
 const memoryNumber = () => {
     numbersElement.classList.add('d-none')
 }
-// chiedere all'utente i numeri
 const memoryAnswer = () => {
-
+    //setto un contatore per il punteggio
     let numbersCounter = 0
-
+    
+    // chiedo all'utente i numeri
     for(let i = 0; i < 5; i++) {
         const userNumbers = parseInt(prompt('ti ricordi i numeri che sono passati?'))
+    //controllo
         if(isNaN(userNumbers) || userNumbers <= 0){
             alert('valori non validi')
         }
+        
         console.log(userNumbers + ' numero utente')
-
+        // stampa in pagina i vari risultati
         showMessageElement.innerText = 'ne hai ricordati 0...'
         showMessageElement.classList.remove('d-none')
         
@@ -63,7 +64,7 @@ const memoryAnswer = () => {
 }
 
 
-
+// set  timing
 setTimeout(memoryNumber, 2900);
 setTimeout(memoryAnswer, 3000);
 
